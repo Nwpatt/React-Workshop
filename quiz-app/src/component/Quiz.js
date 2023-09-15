@@ -16,12 +16,17 @@ const Quiz = ()=>{
         if(selectChoice!==""){
             if(selectChoice===QuestionsData[current].answer){
                 setScore(score+1)
+                nextQuestion()
             } else {
-                console.log("ตอบผิดไม่ได้คะแนน T_T")
+                nextQuestion()
             }
         }
     }
 
+    const nextQuestion=()=> {
+        setCurrent(current+1)
+    }
+    
     return(
         <div className="quiz">
             <h1>{QuestionsData[current].question}</h1>
